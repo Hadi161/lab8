@@ -1,0 +1,40 @@
+body {
+    background-color: gray;
+    color: red;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.container {
+    background-color: antiquewhite;
+    padding: 17px;
+    text-align: center;
+    width: 100%;
+    border-radius: 5px;
+
+}
+
+h1 {
+    font-size: medium;
+    margin: 20px;
+    color: darkred;
+}
+
+button{
+    background-color: blue;
+    color: antiquewhite;
+    padding: 15px;
+    font-size: small;
+    border-radius: 3px;
+    cursor: pointer;
+    margin: 20px;
+}
+
+button :hover {
+    background-color: green;
+}
+
+:hover {
+    color: aqua;
+}

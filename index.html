@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>To Do List </title>
+    
+
+</head>
+
+<body>
+   <div class="container">
+       <h1> Joke</h1>
+       <div id="show-joke"></div>
+       <button id="get-joke">new joke </button>
+</div>
+
+<script>
+    function Joke () {  // This Function is used to fetch jokes from the linked API.
+    fetch('https://official-joke-api.appspot.com/random_joke')
+    .then(response => response.json())  //This feature converts the response to json.
+    .then(data => {
+              //this feature places the joke setup and punchline into the HTML file.
+        document.getElementById('show-joke').innerHTML =`
+        <p><strong>Joke:</strong> ${data.setup}</p>
+        <p><strong>response:</strong> ${data.punchline}</p>
+           ;`
+    })
+          //Displays message if there is an error when fetching the data.
+    .catch(error => {
+        console.error('Error fetching', error);
+        document.getElementById('show-joke').textContent = 'Error'
+        
+    })
+
+
+
+
+
+    }
+
+    Joke();
+       // Event listener added so that the button fetches a new joke when clicked.
+    document.getElementById('get-joke').addEventListener('click',Joke);
+
+
+    
+    
+       
+
+    
+
+
+    
+     
+
+</script>
+
+
+</body>
+</html>
